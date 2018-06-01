@@ -90,7 +90,7 @@ def feedback(passed, failmsg='', passmsg='Correct!'):
 def test_features_tryit(asl):
     print('asl.df sample')
     display(asl.df.head())
-    sample = asl.df.ix[98, 1][GROUND_FEATURES].tolist()
+    sample = asl.df.loc[98, 1][GROUND_FEATURES].tolist()
     correct = [9, 113, -12, 119]
     failmsg = 'The values returned were not correct.  Expected: {} Found: {}'.format(correct, sample)
     return feedback(sample == correct, failmsg)
